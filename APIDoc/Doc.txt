@@ -1,0 +1,895 @@
+//Customer Register
+1. URL:http://localhost:5000/register
+
+Request Type: POST 
+Request Body :
+{
+    "name":"Neha Sharma",
+    "accno":"101",
+    "email":"nehasharma@gmail.com",
+    "balance":243000.0,
+    "password":"12345",
+    "city":"Indore",
+    "mobile":9878957633,
+    "state":"M.P",
+    "pincode":452001,
+    "gender":"Female",
+    "pancard":"AUUQ456886"
+}
+Response:
+{
+    "status": true,
+    "record": {
+        "name": "neha sharma",
+        "accno": "101",
+        "email": "nehasharma@gmail.com",
+        "balance": 243000,
+        "password": "$2b$10$LSU9qZOVFOjyB8Nv3.6fhuWL5g8LVu1v9KKAazK7QHJAp1ZMWzsY2",
+        "mobile": "9878957633",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Female",
+        "pancard": "AUUQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 0,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "_id": "664c3a0fa358170c6b7ef472",
+        "__v": 0
+    },
+    "msg": "Customer Register Successfully"
+}
+=======================================================
+// Get Customer List 
+2. URL:http://localhost:5000/admin/customerlist
+Request Type:GET 
+Response:
+{
+    "status": true,
+    "records": [
+        {
+            "_id": "664c3a0fa358170c6b7ef472",
+            "name": "neha sharma",
+            "accno": "101",
+            "email": "nehasharma@gmail.com",
+            "balance": 243000,
+            "password": "$2b$10$LSU9qZOVFOjyB8Nv3.6fhuWL5g8LVu1v9KKAazK7QHJAp1ZMWzsY2",
+            "mobile": "9878957633",
+            "address": {
+                "city": "Indore",
+                "state": "M.P",
+                "pincode": 452001
+            },
+            "gender": "Female",
+            "pancard": "AUUQ456886",
+            "acctype": "Saving",
+            "simpleinterestrate": 3.1,
+            "fdinterestrate": 7.1,
+            "role": "customer",
+            "status": 0,
+            "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+            "ifsc_code": "MPB89890",
+            "__v": 0
+        },
+        {
+            "_id": "664c3a96a358170c6b7ef475",
+            "name": "rahul sharma",
+            "accno": "102",
+            "email": "rahulsharma@gmail.com",
+            "balance": 253000,
+            "password": "$2b$10$UXiEkem6E4KwunhNWarjXO3q75VmFpFQs3TSxfXc0Op0A6xG8QmxK",
+            "mobile": "9878957633",
+            "address": {
+                "city": "Ujjain",
+                "state": "M.P",
+                "pincode": 452001
+            },
+            "gender": "Male",
+            "pancard": "APPQ456886",
+            "acctype": "Saving",
+            "simpleinterestrate": 3.1,
+            "fdinterestrate": 7.1,
+            "role": "customer",
+            "status": 0,
+            "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+            "ifsc_code": "MPB89890",
+            "__v": 0
+        },
+        {
+            "_id": "664c3ac4a358170c6b7ef478",
+            "name": "admin",
+            "accno": "103",
+            "email": "admin@gmail.com",
+            "balance": 553000,
+            "password": "$2b$10$Uev00x0vODdvscrp16V8DeI9XfY6YedkTBXGAyAFaQjGuLzVdo8Y.",
+            "mobile": "9878957633",
+            "address": {
+                "city": "Bhopal",
+                "state": "M.P",
+                "pincode": 452001
+            },
+            "gender": "Male",
+            "pancard": "QPPQ456886",
+            "acctype": "Saving",
+            "simpleinterestrate": 3.1,
+            "fdinterestrate": 7.1,
+            "role": "admin",
+            "status": 1,
+            "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+            "ifsc_code": "MPB89890",
+            "__v": 0
+        }
+    ]
+} 
+===========================================================
+//get Single Customer 
+3. URL:http://localhost:5000/admin/customer?id=664c3a0fa358170c6b7ef472
+
+Request Type:GET 
+Response:
+{
+    "status": true,
+    "record": {
+        "_id": "664c3a0fa358170c6b7ef472",
+        "name": "neha sharma",
+        "accno": "101",
+        "email": "nehasharma@gmail.com",
+        "balance": 243000,
+        "password": "$2b$10$LSU9qZOVFOjyB8Nv3.6fhuWL5g8LVu1v9KKAazK7QHJAp1ZMWzsY2",
+        "mobile": "9878957633",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Female",
+        "pancard": "AUUQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 0,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+===========================================================
+//Customer Login
+4. URL:http://localhost:5000/login
+Request Type:POST
+Request Body:{
+    "email":"nehasharma@gmail.com",
+    "password":"12345"
+}
+Response:{
+    "status": true,
+    "record": {
+        "_id": "664c3a96a358170c6b7ef475",
+        "name": "rahul sharma",
+        "accno": "102",
+        "email": "rahulsharma@gmail.com",
+        "balance": 253000,
+        "password": "$2b$10$UXiEkem6E4KwunhNWarjXO3q75VmFpFQs3TSxfXc0Op0A6xG8QmxK",
+        "mobile": "9878957633",
+        "address": {
+            "city": "Ujjain",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "pancard": "APPQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 0,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    },
+    "msg": "Login Successfully",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY2NGMzYTk2YTM1ODE3MGM2YjdlZjQ3NSIsImlhdCI6MTcxNjc5MDkxOCwiZXhwIjoxNzE3MjIyOTE4fQ.3lMIbARh3hwCAbXEPIefScgnNTBlEvg0XD64jj2lc8M"
+}
+====================================================
+5.URL:http://localhost:5000/customer/deposit?id=664c3a0fa358170c6b7ef472
+Request Type:PUT
+Request Body:{
+    "amount":10000,
+    "email":"nehasharma@gmail.com",
+    "accno":"101"
+}
+Response:{
+    "status": true,
+    "record": {
+        "_id": "664c3a0fa358170c6b7ef472",
+        "name": "neha sharma",
+        "accno": "101",
+        "email": "nehasharma@gmail.com",
+        "balance": 223000,
+        "password": "$2b$10$LSU9qZOVFOjyB8Nv3.6fhuWL5g8LVu1v9KKAazK7QHJAp1ZMWzsY2",
+        "mobile": "9878957633",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Female",
+        "pancard": "AUUQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 0,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+====================================================
+//withdraw amount
+6.URL:http://localhost:5000/customer/withdraw?id=664c3a0fa358170c6b7ef472
+Request Type:PUT
+Request Body:{
+    "amount":10000,
+    "email":"nehasharma@gmail.com",
+    "accno":"101"
+}
+Response:{
+    "status": true,
+    "record": {
+        "_id": "664c3a0fa358170c6b7ef472",
+        "name": "neha sharma",
+        "accno": "101",
+        "email": "nehasharma@gmail.com",
+        "balance": 213000,
+        "password": "$2b$10$LSU9qZOVFOjyB8Nv3.6fhuWL5g8LVu1v9KKAazK7QHJAp1ZMWzsY2",
+        "mobile": "9878957633",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Female",
+        "pancard": "AUUQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 0,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+=======================================
+//All Customer Transactions 
+7. URL:http://localhost:5000/admin/transactions
+Request Body :
+{
+    email:"rahulsharma@gmail.com"
+}
+Request Type:POST,
+Response:{
+    "status": true,
+    "transactions": [
+        {
+            "_id": "664edad66268176f7ae4b631",
+            "customer_id": "664c3a0fa358170c6b7ef472",
+            "amount": 5000,
+            "balance_before_transaction": 213000,
+            "balance_after_transaction": 208000,
+            "transaction_type": "withdraw",
+            "timestamp": "Thu May 23 2024 11:25:29 GMT+0530 (India Standard Time)",
+            "__v": 0
+        },
+        {
+            "_id": "664edb1f6268176f7ae4b635",
+            "customer_id": "664c3a0fa358170c6b7ef472",
+            "amount": 5000,
+            "balance_before_transaction": 208000,
+            "balance_after_transaction": 213000,
+            "transaction_type": "deposit",
+            "timestamp": "Thu May 23 2024 11:25:29 GMT+0530 (India Standard Time)",
+            "__v": 0
+        },
+        {
+            "_id": "664edb876268176f7ae4b639",
+            "customer_id": "664c3a96a358170c6b7ef475",
+            "amount": 5000,
+            "balance_before_transaction": 253000,
+            "balance_after_transaction": 258000,
+            "transaction_type": "deposit",
+            "timestamp": "Thu May 23 2024 11:25:29 GMT+0530 (India Standard Time)",
+            "__v": 0
+        },
+        {
+            "_id": "664edbac6268176f7ae4b63d",
+            "customer_id": "664c3a96a358170c6b7ef475",
+            "amount": 5000,
+            "balance_before_transaction": 258000,
+            "balance_after_transaction": 253000,
+            "transaction_type": "withdraw",
+            "timestamp": "Thu May 23 2024 11:25:29 GMT+0530 (India Standard Time)",
+            "__v": 0
+        }
+    ]
+}
+=======================
+//Single Customer Transactions
+8. URL:http://localhost:5000/customer/transactions?id=664c3a0fa358170c6b7ef472
+ Request Type:GET
+ Response:{
+    "status": true,
+    "transactions": [
+        {
+            "_id": "664edad66268176f7ae4b631",
+            "customer_id": "664c3a0fa358170c6b7ef472",
+            "amount": 5000,
+            "balance_before_transaction": 213000,
+            "balance_after_transaction": 208000,
+            "transaction_type": "withdraw",
+            "timestamp": "Thu May 23 2024 11:25:29 GMT+0530 (India Standard Time)",
+            "__v": 0
+        },
+        {
+            "_id": "664edb1f6268176f7ae4b635",
+            "customer_id": "664c3a0fa358170c6b7ef472",
+            "amount": 5000,
+            "balance_before_transaction": 208000,
+            "balance_after_transaction": 213000,
+            "transaction_type": "deposit",
+            "timestamp": "Thu May 23 2024 11:25:29 GMT+0530 (India Standard Time)",
+            "__v": 0
+        }
+    ]
+}
+
+===============================
+//Upload Single Doc
+
+9.URL:http://localhost:5000/customer/uploaddocument?id=664c3a0fa358170c6b7ef472
+
+Request Type:POST
+Request Body(select formdata):{
+    doc_name:AadharCard,
+    upload_doc:AadharFront.jpeg (select File)
+}
+Response:{
+    "success": true,
+    "post": {
+        "doc_name": "AadharCard",
+        "upload_doc": "http://localhost:5000/uploaddocuments/1716445721650_AadharFront.jpeg",
+        "customer_id": "664c3a0fa358170c6b7ef472",
+        "_id": "664ee219e0d3eb3a8b51dc85",
+        "__v": 0
+    }
+}
+======================================
+//multiple upload docs
+10.URL:http://localhost:5000/customer/uploadmultiple?id=664c3a0fa358170c6b7ef472
+
+Request Type:POST 
+Request Body(formdata):{
+    doc_name:PANCARD,
+    upload_doc:2 files selected
+}
+Response:{
+    "success": true,
+    "post": {
+        "doc_name": "PANCARD",
+        "upload_doc": [
+            {
+                "type": "image/jpeg",
+                "name": "1716531945313_PANCARD_Front.jpg",
+                "path": "http://localhost:5000/multipleuploaddocuments/1716531945313_PANCARD_Front.jpg",
+                "size": 75434
+            },
+            {
+                "type": "image/jpeg",
+                "name": "1716531945319_PANCARD_Back.jpg",
+                "path": "http://localhost:5000/multipleuploaddocuments/1716531945319_PANCARD_Back.jpg",
+                "size": 65464
+            }
+        ],
+        "customer_id": "664c3a0fa358170c6b7ef472",
+        "_id": "665032e9a585ed63f33d7d80",
+        "__v": 0
+    }
+}
+========================
+11.Edit Profile Using jwttoken
+URL:http://localhost:5000/customer/editprofile?id=664c3a96a358170c6b7ef475
+
+Request Type:PUT 
+
+Request Body:{
+   "name": "rahul sharma", 
+   "city" : "Ujjain", 
+   "mobile": "9876957644", 
+   "state": "M.P", 
+   "pincode":456335, 
+   "gender": "Male"
+}
+Response:{
+    "success": true,
+    "msg": "Customer Record Updated Successfully !",
+    "record": {
+        "_id": "664c3a96a358170c6b7ef475",
+        "name": "rahul sharma",
+        "accno": "102",
+        "email": "rahulsharma@gmail.com",
+        "balance": 253000,
+        "password": "$2b$10$UXiEkem6E4KwunhNWarjXO3q75VmFpFQs3TSxfXc0Op0A6xG8QmxK",
+        "mobile": "9876957644",
+        "address": {
+            "city": "Ujjain",
+            "state": "M.P",
+            "pincode": 456335
+        },
+        "gender": "Male",
+        "pancard": "APPQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 0,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+========================
+12.Send Email to Gmail for forgot password
+URL:http://localhost:5000/senduserpasswordresetemail
+Request Body:{
+    email:"videhjaiswal@gmail.com"
+}
+Request Type:POST
+Response:{
+    "success": true,
+    "msg": "Password Reset Email Send...Please Check Your Email",
+    "Info": {
+        "accepted": [
+            "videhjaiswal@gmail.com"
+        ],
+        "rejected": [],
+        "ehlo": [
+            "SIZE 35882577",
+            "8BITMIME",
+            "AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH",
+            "ENHANCEDSTATUSCODES",
+            "PIPELINING",
+            "CHUNKING",
+            "SMTPUTF8"
+        ],
+        "envelopeTime": 1352,
+        "messageTime": 997,
+        "messageSize": 929,
+        "response": "250 2.0.0 OK  1716962532 d9443c01a7336-1f44c9683besm90017385ad.138 - gsmtp",
+        "envelope": {
+            "from": "vjuniversal1@gmail.com",
+            "to": [
+                "videhjaiswal@gmail.com"
+            ]
+        },
+        "messageId": "<e0b811bc-e0cc-211e-9e08-38e48c1d3e25@gmail.com>"
+    },
+    "id": "6656c387e217c52a895a24b2",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY2NTZjMzg3ZTIxN2M1MmE4OTVhMjRiMiIsImlhdCI6MTcxNjk2MjUyOCwiZXhwIjoxNzE2OTY0MzI4fQ.v91hbSQ6DU64RylBSQ8_Kq_gXaRttB1rJg0NAf_qxlo"
+}
+=====================================
+13.Password Reset 
+URL:http://localhost:5000/userpasswordreset?id=6656c387e217c52a895a24b2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY2NTZjMzg3ZTIxN2M1MmE4OTVhMjRiMiIsImlhdCI6MTcxNjk2MjUyOCwiZXhwIjoxNzE2OTY0MzI4fQ.v91hbSQ6DU64RylBSQ8_Kq_gXaRttB1rJg0NAf_qxlo
+
+Request Type:POST
+Request Body:{ 
+    "password":"123456", 
+    "confirm_password":"123456" 
+}
+Response:{
+    "success": true,
+    "msg": "Password reset successfully",
+    "record": {
+        "_id": "6656c387e217c52a895a24b2",
+        "name": "videh jaiswal",
+        "accno": "105",
+        "email": "videhjaiswal@gmail.com",
+        "balance": 553000,
+        "password": "$2b$10$r9f028lKKpumCmVThmP0muhPoVZm8WjtJWi8JYyhgm8Ruh4sNBQr6",
+        "mobile": "9878958833",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "pancard": "QKKQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 0,
+        "info": "Wed May 29 2024 11:24:44 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+===================
+14:Manage Customer Status and Delete Customer
+URL:http://localhost:5000/admin/managecustomer?id=664c3a96a358170c6b7ef475&s=block
+
+Request Type:GET 
+
+Response:{
+    "success": true,
+    "msg": {
+        "_id": "664c3a96a358170c6b7ef475",
+        "name": "rahul sharma",
+        "accno": "102",
+        "email": "rahulsharma@gmail.com",
+        "balance": 253000,
+        "password": "$2b$10$UXiEkem6E4KwunhNWarjXO3q75VmFpFQs3TSxfXc0Op0A6xG8QmxK",
+        "mobile": "9876957655",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "pancard": "APPQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 0,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+==============
+URL:http://localhost:5000/admin/managecustomer?id=664c3a96a358170c6b7ef475&s=verify
+
+Request Type:GET 
+
+Response:{
+    "success": true,
+    "msg": {
+        "_id": "664c3a96a358170c6b7ef475",
+        "name": "rahul sharma",
+        "accno": "102",
+        "email": "rahulsharma@gmail.com",
+        "balance": 253000,
+        "password": "$2b$10$UXiEkem6E4KwunhNWarjXO3q75VmFpFQs3TSxfXc0Op0A6xG8QmxK",
+        "mobile": "9876957655",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "pancard": "APPQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 1,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+===========================
+URL:http://localhost:5000/admin/managecustomer?id=664c3a96a358170c6b7ef475
+Request Type:GET 
+Response:{
+             success: true,
+             msg: "Record Delete Successfully!!",
+}
+================
+
+15.Fetch Single Customer
+URL:http://localhost:5000/customer/details?id=664c3a0fa358170c6b7ef472
+
+Request Type:GET
+
+Response:{
+    "success": true,
+    "record": {
+        "_id": "664c3a96a358170c6b7ef475",
+        "name": "rahul sharma",
+        "accno": "102",
+        "email": "rahulsharma@gmail.com",
+        "balance": 253000,
+        "password": "$2b$10$UXiEkem6E4KwunhNWarjXO3q75VmFpFQs3TSxfXc0Op0A6xG8QmxK",
+        "mobile": "9876957655",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "pancard": "APPQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 1,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+===================================
+16.Create Fixed Deposit
+URL:http://localhost:5000/customer/fixeddeposit?id=664c3a96a358170c6b7ef475
+
+Request Type:POST 
+
+Request Body:{
+    "fd_amount":20000,
+    "email":"rahulsharma@gmail.com",
+    "fd_duration":2
+}
+Response:{
+    "status": true,
+    "fd_record": {
+        "customer_id": "664c3a96a358170c6b7ef475",
+        "accno": 2068515,
+        "fd_amount": 20000,
+        "balance_after_creating_fd": 233000,
+        "transaction_type": "Fixed Deposit",
+        "interestRate": 7.1,
+        "fd_duration": 2,
+        "timestamp": "Fri May 31 2024 11:43:40 GMT+0530 (India Standard Time)",
+        "interestAmount": 2840,
+        "_id": "66596af69a84d84eb794d02d",
+        "__v": 0
+    },
+    "msg": "Successfully Created Fixed Deposit"
+}
+=========
+17.Update FD balance in Saving Account
+URL:http://localhost:5000/customer/updatebalance?id=664c3a96a358170c6b7ef475
+
+Request Type:POST 
+
+Request Body:{
+    "dateInString":"Fri May 31 2024 11:43:40 GMT+0530 (India Standard Time)",
+    "accno":7469649
+}
+
+Response:{
+    "status": true,
+    "record": {
+        "_id": "664c3a96a358170c6b7ef475",
+        "name": "rahul sharma",
+        "accno": "102",
+        "email": "rahulsharma@gmail.com",
+        "balance": 237686,
+        "password": "$2b$10$UXiEkem6E4KwunhNWarjXO3q75VmFpFQs3TSxfXc0Op0A6xG8QmxK",
+        "mobile": "9876957655",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "pancard": "APPQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 1,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+=======================
+18.Change Password
+URL:http://localhost:5000/customer/changepassword?id=664c3a96a358170c6b7ef475
+
+Request Type:POST
+
+Request Body:{
+    "oldPass":"12345",
+    "newPass":"123456",
+    "conPass":"123456"
+}
+
+Response:{
+    "status": true,
+    "msg": "Password changed successfully",
+    "record": {
+        "_id": "664c3a96a358170c6b7ef475",
+        "name": "rahul sharma",
+        "accno": "102",
+        "email": "rahulsharma@gmail.com",
+        "balance": 237686,
+        "password": "$2b$10$UXiEkem6E4KwunhNWarjXO3q75VmFpFQs3TSxfXc0Op0A6xG8QmxK",
+        "mobile": "9876957655",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "pancard": "APPQ456886",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 1,
+        "info": "Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+==============================
+19. Fetch Customer's Fixed Deposit
+URL:http://localhost:5000/customer/fetchfd?id=664c3a96a358170c6b7ef475
+Request Type:GET 
+Response:{
+    "status": true,
+    "records": [
+        {
+            "_id": "66596af69a84d84eb794d02d",
+            "customer_id": "664c3a96a358170c6b7ef475",
+            "accno": 2068515,
+            "fd_amount": 20000,
+            "balance_after_creating_fd": 233000,
+            "transaction_type": "Fixed Deposit",
+            "interestRate": 7.1,
+            "fd_duration": 2,
+            "timestamp": "Fri May 31 2024 11:43:40 GMT+0530 (India Standard Time)",
+            "interestAmount": 2840,
+            "__v": 0
+        },
+        {
+            "_id": "66596bf89a84d84eb794d032",
+            "customer_id": "664c3a96a358170c6b7ef475",
+            "accno": 7469649,
+            "fd_amount": 33000,
+            "balance_after_creating_fd": 200000,
+            "transaction_type": "Fixed Deposit",
+            "interestRate": 7.1,
+            "fd_duration": 2,
+            "timestamp": "Fri May 31 2024 11:43:40 GMT+0530 (India Standard Time)",
+            "interestAmount": 4686,
+            "__v": 0
+        }
+    ]
+}
+==============
+20.Single Customer Details 
+URL:http://localhost:5000/customer/details?id=664c3a96a358170c6b7ef475
+Request Type:GET 
+Response:
+{"success":true,"record":{"_id":"664c3a96a358170c6b7ef475","name":"rahul sharma","accno":"102","email":"rahulsharma@gmail.com","balance":237686,"password":"$2b$10$UdgB48LdN3bMh.LlgeZc4.p5vi469P1LzwBWn/0/iw/l7/C/8gf6m","mobile":"9876957655","address":{"city":"Indore","state":"M.P","pincode":452001},"gender":"Male","pancard":"APPQ456886","acctype":"Saving","simpleinterestrate":3.1,"fdinterestrate":7.1,"role":"customer","status":1,"info":"Tue May 21 2024 11:35:03 GMT+0530 (India Standard Time)","ifsc_code":"MPB89890","__v":0}}
+===================
+21. Fetch Multiple Documents
+URL:http://localhost:5000/customer/fetchmultipledoc?id=664c3a96a358170c6b7ef475
+Request Type:GET 
+Response:{
+    "success": true,
+    "documents": [
+        {
+            "_id": "665032b6a585ed63f33d7d7e",
+            "doc_name": "PANCARD",
+            "upload_doc": [
+                {
+                    "type": "image/jpeg",
+                    "name": "1716531894823_PANCARD_Front.jpg",
+                    "path": "http://localhost:5000/multipleuploaddocuments/1716531894823_PANCARD_Front.jpg",
+                    "size": 75434
+                },
+                {
+                    "type": "image/jpeg",
+                    "name": "1716531894825_PANCARD_Back.jpg",
+                    "path": "http://localhost:5000/multipleuploaddocuments/1716531894825_PANCARD_Back.jpg",
+                    "size": 65464
+                }
+            ],
+            "customer_id": "664c3a96a358170c6b7ef475",
+            "__v": 0
+        },
+        {
+            "_id": "668e408de5fc2fd2ec06cb7f",
+            "doc_name": "Aadhar Card",
+            "upload_doc": [
+                {
+                    "type": "image/jpeg",
+                    "name": "1720598669665_AadharBack.jpeg",
+                    "path": "http://localhost:5000/multipleuploaddocuments/1720598669665_AadharBack.jpeg",
+                    "size": 134019
+                },
+                {
+                    "type": "image/jpeg",
+                    "name": "1720598669670_AadharFront.jpeg",
+                    "path": "http://localhost:5000/multipleuploaddocuments/1720598669670_AadharFront.jpeg",
+                    "size": 152495
+                }
+            ],
+            "customer_id": "664c3a96a358170c6b7ef475",
+            "__v": 0
+        }
+    ]
+}
+================================================
+22. Verify Email at the time of forgot password
+URL: http://localhost:2002/customer/verifyUser
+Request Type: POST
+Request Body: {
+    "email": "devansh@google.com"
+}
+Response: {
+    "status": true,
+    "records": {
+        "_id": "669a57f508af42e0fc32bca2",
+        "name": "devansh",
+        "accno": "369963",
+        "email": "devansh@google.com",
+        "balance": 4580000,
+        "password": "$2b$10$4HecNeEU0syPqtQ2Zj29R.qGZsve9NGWKRZDirzlJv2T5jKDTKxpK",
+        "mobile": "9009660006",
+        "address": {
+            "city": "Indore",
+            "state": "Madhya Pradesh",
+            "pincode": "456123"
+        },
+        "gender": "male",
+        "pancard": "ABCDE1234F",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 1,
+        "info": "Fri Jul 19 2024 17:40:48 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
+====================================================
+23. Set Password after verify email
+URL: http://localhost:2002/customer/setPassword
+Request Type: PUT
+Request Body: {
+    "newPass": "369963",
+    "conPass": "369963"
+}
+Response:{
+    "status": true,
+    "msg": "Password changed successfully",
+    "record": {
+        "_id": "669a57f508af42e0fc32bca2",
+        "name": "devansh",
+        "accno": "369963",
+        "email": "devansh@google.com",
+        "balance": 4580000,
+        "password": "$2b$10$qbXnHBPAg6tc6ly6oRu74uYivjkkqOCPuhrC1pGZoGdPWFfQ0nUQq",
+        "mobile": "9009660006",
+        "address": {
+            "city": "Indore",
+            "state": "Madhya Pradesh",
+            "pincode": "456123"
+        },
+        "gender": "male",
+        "pancard": "ABCDE1234F",
+        "acctype": "Saving",
+        "simpleinterestrate": 3.1,
+        "fdinterestrate": 7.1,
+        "role": "customer",
+        "status": 1,
+        "info": "Fri Jul 19 2024 17:40:48 GMT+0530 (India Standard Time)",
+        "ifsc_code": "MPB89890",
+        "__v": 0
+    }
+}
